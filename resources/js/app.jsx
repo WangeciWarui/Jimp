@@ -10,13 +10,13 @@ import { createRoot } from 'react-dom/client';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-createInertiaApp({
+ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
-        resolvePageComponent(
-            `./pages/${name}.jsx`,
-            import.meta.glob('./pages/Auth/Login.jsx,'),
-            import.meta.glob('./pages/Auth/login.tsx,'),
+         resolvePageComponent(
+            `./Pages/${name}.jsx`,
+            import.meta.glob('./Pages/Auth/.jsx,'),
+            import.meta.glob('./Pages/Auth/.tsx,'),
         ),
     setup({ el, App, props }) {
         const root = createRoot(el);
