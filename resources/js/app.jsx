@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 //import { App } from './App';
 
 import { createInertiaApp } from '@inertiajs/react';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { resolvePageComponent } from './index.jsx';
 import { createRoot } from 'react-dom/client';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -14,6 +14,7 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
         resolvePageComponent(
+            console.log(Object.keys(pages))
             `./Pages/${name}.jsx`,
             import.meta.glob('./Pages/Auth/.jsx,'),
             import.meta.glob('./Pages/Auth/.tsx,'),
